@@ -6,11 +6,26 @@ const createElement = (tag,className)=>{
     return element
 }
 
-const createCard = ()=>{
+const characters = [
+    'beth',
+    'jerry',
+    'jessica',
+    'meeseeks',
+    'morty',
+    'pessoa-passaro',
+    'pickle-rick',
+    'rick',
+    'scroopy',
+    'summer'
+]
+
+const createCard = (character)=>{
 
   const card = createElement('div','card')
   const front = createElement('div','face front')
   const back = createElement('div', 'face back')
+
+  front.style.backgroundImage = `url('./assets/img/${character}.png')`
 
   card.appendChild(front)
   card.appendChild(back)
@@ -20,4 +35,20 @@ const createCard = ()=>{
   return card
 }
 
-createCard()
+
+const loadGame = ()=>{
+
+    const duplicateCharacters = [...characters, ...characters]
+    
+    const shuffledArray = duplicateCharacters.sort(()=> Math.random() - 0.5)
+
+    shuffledArray.forEach(character=>{
+
+      const card = createCard(character)
+      grid.appendChild(card)
+
+    })
+}
+
+loadGame()
+
