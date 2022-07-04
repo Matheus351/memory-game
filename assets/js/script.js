@@ -41,6 +41,8 @@ const checkCards = ()=>{
 
          firstCard = ''
          secondCard = ''
+
+         checkEndGame()
           
     }else{
         setTimeout(()=>{
@@ -50,6 +52,14 @@ const checkCards = ()=>{
             firstCard = ''
             secondCard = ''
         },500)
+    }
+}
+
+const checkEndGame = ()=>{
+    const disabledCards = document.querySelectorAll('.disabled-card')
+
+    if(disabledCards.length===20){
+        alert('Boa! Você acertou tudo!')
     }
 }
 
