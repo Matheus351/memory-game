@@ -59,3 +59,48 @@
     color: rgba(0, 0, 0, 0.346);
     cursor: auto;
 }
+
+.grid{
+    display: grid;
+    width: 100%;
+    max-width: 800px;
+    grid-template-columns: repeat(5,1fr);
+    gap: 13px;
+    margin: 0 auto;
+    background-color: #00ffff;
+}
+
+.card{
+    aspect-ratio: 3/4;
+    width: 100%;
+    background-color: #00000060;
+    border-radius: 5px;
+    position: relative;
+    transition: all 500ms ease;
+    transform-style: preserve-3d;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #39813a;
+    border-radius: 5px;
+}
+
+.front{
+    background-color: red;
+    background-image: url('../img/beth.png');
+    transform:rotateY(180deg);
+}
+
+.back{
+    background-image: url('../img/back.png');
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
