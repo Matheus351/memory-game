@@ -96,9 +96,9 @@
 
 .back{
     background-image: url('../img/back.png');
+    backface-visibility: hidden;
 }
 
-.card:hover{
+.reveal-card{
     transform: rotateY(180deg);
-    backface-visibility: hidden;
 }

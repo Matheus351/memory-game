@@ -6,6 +6,15 @@ const createElement = (tag,className)=>{
     return element
 }
 
+const revealCard = ({target})=>{
+    
+    if(target.parentNode.className.includes('reveal-card')){
+        return
+    }
+
+  target.parentNode.classList.add('reveal-card')
+}
+
 const characters = [
     'beth',
     'jerry',
@@ -31,6 +40,8 @@ const createCard = (character)=>{
   card.appendChild(back)
 
   grid.appendChild(card)
+
+  card.addEventListener('click',revealCard)
   
   return card
 }
