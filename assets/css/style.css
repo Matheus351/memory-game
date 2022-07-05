@@ -72,7 +72,7 @@
 .card{
     aspect-ratio: 3/4;
     width: 100%;
-    background-color: #00000060;
+    background-color: #ffffff;
     border-radius: 5px;
     position: relative;
     transition: all 500ms ease;

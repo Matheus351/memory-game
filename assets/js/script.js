@@ -59,7 +59,8 @@ const checkEndGame = ()=>{
     const disabledCards = document.querySelectorAll('.disabled-card')
 
     if(disabledCards.length===20){
-        alert('Boa! Você acertou tudo!')
+        alert(`Parabéns, ${spanPlayer.innerHTML}!, Seu tempo foi: ${timer.innerHTML}`)
+        clearInterval(this.loop)
     }
 }
 
@@ -118,9 +119,17 @@ window.onload = ()=>{
   const playerName = localStorage.getItem('player')
   spanPlayer.innerHTML = playerName
   loadGame()
-
+  startTimer()
 }
 
+const timer = document.querySelector('.timer')
+
+const startTimer = ()=>{
+ this.loop = setInterval(()=>{
+      const currentTime = Number(timer.innerHTML)
+      timer.innerHTML = currentTime + 1
+    },1000)
+}
 
 
 
