@@ -110,7 +110,20 @@ const loadGame = ()=>{
     })
 }
 
-loadGame()
+const spanPlayer = document.querySelector('.player')
+
+window.onload = ()=>{
+
+
+  const playerName = localStorage.getItem('player')
+  spanPlayer.innerHTML = playerName
+  loadGame()
+
+}
+
+
+
+
 
 
 
